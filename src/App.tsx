@@ -1,6 +1,8 @@
-import { styled, createGlobalStyle } from 'styled-components';
-import Content from './layout/Content';
-import GlobalFonts from './fonts/fonts';
+import { styled, createGlobalStyle } from "styled-components";
+import Content from "./layout/Content";
+import GlobalFonts from "./fonts/fonts";
+import { tokens } from "./constants";
+
 function App() {
   return (
     <main>
@@ -12,6 +14,22 @@ function App() {
 }
 
 const GlobalStyle = createGlobalStyle`
+html {
+
+  --font-size-text-lg: ${tokens.font.size.text.lg};
+  --font-size-text-md: ${tokens.font.size.text.md};
+  --font-size-text-sm: ${tokens.font.size.text.sm};
+
+  --font-size-heading-xl: ${tokens.font.size.heading.xl};
+  --font-size-heading-lg: ${tokens.font.size.heading.lg};
+  --font-size-heading-md: ${tokens.font.size.heading.md};
+  --font-size-heading-sm: ${tokens.font.size.heading.sm};
+
+  --font-family-heading: ${tokens.font.family.heading};
+  --font-family-text: ${tokens.font.family.text};
+  
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
