@@ -27,6 +27,8 @@ html {
 
   --font-family-heading: ${tokens.font.family.heading};
   --font-family-text: ${tokens.font.family.text};
+
+  --color-primary: ${tokens.color.primary};
   
 }
 

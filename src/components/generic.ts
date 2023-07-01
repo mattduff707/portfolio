@@ -42,3 +42,28 @@ export const Button = styled.button`
     width: 60%;
   }
 `;
+export const Anchor = styled.a`
+  background: white;
+  font-size: var(--font-size-text-md);
+  font-family: var(--font-family-text);
+  border: none;
+  cursor: pointer;
+  padding: 4px 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: black;
+    border-radius: 32px;
+    transition: background 0.2s ease, width 0.2s ease;
+  }
+  &:hover:after {
+    transition: background 0.2s ease, width 0.2s ease;
+    background: var(--color-primary);
+    width: 60%;
+  }
+`;

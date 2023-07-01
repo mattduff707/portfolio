@@ -26,4 +26,7 @@ export const tokens = {
     md: "only screen and (max-width: 900px)",
     lg: "only screen and (max-width: 1200px)",
   },
+  color: {
+    primary: "#ff367c",
+  },
 };
