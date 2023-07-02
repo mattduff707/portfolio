@@ -1,9 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { tokens } from "../constants";
-import Header from "../components/Header";
-import About from "./About";
-import Contact from "./Contact";
+import styled from 'styled-components';
+import Header from '../components/Header';
+import { tokens } from '../constants';
+import About from './About';
+import Projects from './Projects';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -28,7 +27,7 @@ const Content = () => {
           <About />
         </Pad>
         <Pad>
-          <Contact />
+          <Projects />
         </Pad>
       </ContentWrapper>
     </Wrapper>

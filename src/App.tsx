@@ -1,7 +1,8 @@
-import { styled, createGlobalStyle } from "styled-components";
-import Content from "./layout/Content";
-import GlobalFonts from "./fonts/fonts";
-import { tokens } from "./constants";
+import { styled, createGlobalStyle } from 'styled-components';
+import Content from './layout/Content';
+import GlobalFonts from './fonts/fonts';
+import { tokens } from './constants';
+import Contact from './layout/Contact';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <GlobalStyle />
       <GlobalFonts />
       <Content />
+      <Contact />
     </main>
   );
 }
