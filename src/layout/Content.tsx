@@ -1,12 +1,13 @@
-import styled from 'styled-components';
-import Header from '../components/Header';
-import { tokens } from '../constants';
-import About from './About';
-import Projects from './Projects';
+import styled from "styled-components";
+import Header from "../components/Header";
+import { tokens } from "../constants";
+import About from "./About";
+import Projects from "./Projects";
 
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
+  padding-bottom: 48px;
   justify-content: center;
 `;
 const ContentWrapper = styled.div`
