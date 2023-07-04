@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionBox from '../components/SectionBox';
 import { styled } from 'styled-components';
 import ProjectLink from '../components/ProjectLink';
+import { projectData } from '../constants';
+import ProjectPage from './ProjectPage';
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,13 +13,25 @@ const Wrapper = styled.div`
 `;
 
 const Projects = () => {
+  const [activeProject, setActiveProject] = useState<number | null>(null);
+  console.log(activeProject);
+
   return (
     <SectionBox title={'Projects'}>
-      <Wrapper>
-        <ProjectLink />
-        <ProjectLink />
-        <ProjectLink />
-      </Wrapper>
+      {activeProject !== null ? (
+        <ProjectPage project={projectData[activeProject]} />
+      ) : (
+        <Wrapper>
+          {projectData.map((project, idx) => (
+            <ProjectLink
+              handleClick={() => setActiveProject(idx)}
+              key={project.title}
+              title={project.card.title}
+              imageSrc={project.card.image}
+            />
+          ))}
+        </Wrapper>
+      )}
     </SectionBox>
   );
 };
