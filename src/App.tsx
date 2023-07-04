@@ -1,8 +1,8 @@
-import { styled, createGlobalStyle } from 'styled-components';
-import Content from './layout/Content';
-import GlobalFonts from './fonts/fonts';
-import { tokens } from './constants';
-import Contact from './layout/Contact';
+import { styled, createGlobalStyle } from "styled-components";
+import Content from "./layout/Content";
+import GlobalFonts from "./fonts/fonts";
+import { tokens } from "./constants";
+import Contact from "./layout/Contact";
 
 function App() {
   return (
@@ -31,6 +31,17 @@ html {
   --font-family-text: ${tokens.font.family.text};
 
   --color-primary: ${tokens.color.primary};
+  
+}
+
+button {
+  font-family: var(--font-family-text);
+  font-size: var(--font-size-text-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
   
 }
 
