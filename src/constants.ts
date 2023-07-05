@@ -1,4 +1,14 @@
 import supercall from './images/supercall.png';
+import supercall1 from './images/supercall1.png';
+import supercall2 from './images/supercall2.png';
+import supercall3 from './images/supercall3.png';
+import supercall4 from './images/supercall4.png';
+import supercall5 from './images/supercall5.png';
+import supercall6 from './images/supercall6.png';
+import supercall7 from './images/supercall7.png';
+import supercall8 from './images/supercall8.png';
+import supercall9 from './images/supercall9.png';
+import supercall10 from './images/supercall10.png';
 
 export const tokens = {
   size: {
@@ -42,6 +52,7 @@ export interface ProjectData {
   overview: string;
   stack: string[];
   role: string;
+  images: string[];
 }
 
 export const projectData: ProjectData[] = [
@@ -58,10 +69,22 @@ export const projectData: ProjectData[] = [
       'Chakra UI',
       'PostgreSQL',
       'Firebase / Google Cloud',
-      'Stripe',
+      'Stripe API',
       'Amazon Chime SDK',
       'Postmark',
     ],
     role: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    images: [
+      supercall1,
+      supercall2,
+      supercall3,
+      supercall4,
+      supercall5,
+      supercall6,
+      supercall7,
+      supercall8,
+      supercall9,
+      supercall10,
+    ],
   },
 ];
