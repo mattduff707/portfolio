@@ -41,6 +41,7 @@ export interface ProjectData {
   title: string;
   overview: string;
   stack: string[];
+  role: string;
 }
 
 export const projectData: ProjectData[] = [
@@ -52,6 +53,15 @@ export const projectData: ProjectData[] = [
     title: 'Supercall',
     overview:
       'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    stack: ['React (Remix)', 'Chakra UI', 'PostgreSQL'],
+    stack: [
+      'React (Remix)',
+      'Chakra UI',
+      'PostgreSQL',
+      'Firebase / Google Cloud',
+      'Stripe',
+      'Amazon Chime SDK',
+      'Postmark',
+    ],
+    role: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   },
 ];

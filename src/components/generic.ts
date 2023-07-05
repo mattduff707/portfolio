@@ -1,6 +1,30 @@
-import { styled } from "styled-components";
-import { tokens } from "../constants";
+import { keyframes, styled } from 'styled-components';
+import { tokens } from '../constants';
 
+const expand = keyframes`
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+export const Heading = styled.h4<{ delay?: number }>`
+  font-size: var(--font-size-heading-sm);
+  font-family: var(--font-family-text);
+  margin-bottom: 8px;
+  &:after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: black;
+    border-radius: 24px;
+    animation: ${expand} 0.5s ease-out forwards;
+    width: 0%;
+    /* ${({ delay }) => `animation-delay: ${delay}s;`} */
+  }
+`;
 export const Text = styled.p<{ withIndent?: boolean }>`
   --font-size-text: var(--font-size-text-md);
 
@@ -28,7 +52,7 @@ export const Button = styled.button`
   align-items: center;
   flex-direction: column;
   &:after {
-    content: "";
+    content: '';
     display: block;
     width: 110%;
     height: 5px;
@@ -53,7 +77,7 @@ export const Anchor = styled.a`
   align-items: center;
   flex-direction: column;
   &:after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 3px;
