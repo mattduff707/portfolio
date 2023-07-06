@@ -1,12 +1,12 @@
-import React from "react";
-import SectionBox from "../components/SectionBox";
-import { styled } from "styled-components";
-import { Anchor, Text } from "../components/generic";
+import React from 'react';
+import SectionBox from '../components/SectionBox';
+import { styled } from 'styled-components';
+import { Anchor, Text } from '../components/generic';
 
-import Github from "../components/icons/Github";
-import Email from "../components/icons/Email";
-import LinkedIn from "../components/icons/LinkedIn";
-import Resume from "../components/icons/Resume";
+import Github from '../components/icons/Github';
+import Email from '../components/icons/Email';
+import LinkedIn from '../components/icons/LinkedIn';
+import Resume from '../components/icons/Resume';
 
 const Wrapper = styled.footer`
   --shadow-color: 0deg 0% 63%;
@@ -15,6 +15,7 @@ const Wrapper = styled.footer`
   width: 100%;
   border-top: 5px solid black;
   background: white;
+  z-index: 1000;
 `;
 
 const Container = styled.ul`
@@ -75,7 +76,7 @@ const ResumeIcon = styled(Resume)`
 
 const Contact = () => {
   return (
-    <Wrapper title={"Contact"}>
+    <Wrapper title={'Contact'}>
       <Container>
         <ContactItem>
           <EmailIcon />

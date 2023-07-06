@@ -3,6 +3,8 @@ import { ProjectData } from '../constants';
 import CloseBtn from '../components/CloseBtn';
 import { styled } from 'styled-components';
 import { Heading, Text } from '../components/generic';
+import Arrow from '../components/icons/Arrow';
+import Carousel from '../components/Carousel';
 
 const Wrapper = styled.div`
   position: relative;
@@ -52,6 +54,7 @@ const ListItem = styled.li`
 `;
 
 const ProjectPage = ({ project, handleClose }: { project: ProjectData; handleClose: VoidFunction }) => {
+  console.log('RENDER');
   return (
     <Wrapper>
       <StyledCloseBtn handleClick={handleClose} />
@@ -74,6 +77,7 @@ const ProjectPage = ({ project, handleClose }: { project: ProjectData; handleClo
           </List>
         </div>
       </Row>
+      <Carousel images={project.images} />
     </Wrapper>
   );
 };

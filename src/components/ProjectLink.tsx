@@ -55,8 +55,8 @@ const ImageCover = styled.div`
 `;
 
 const ArrowRight = styled(Arrow)`
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   fill: ${tokens.color.primary};
 `;
 
