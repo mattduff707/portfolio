@@ -28,9 +28,9 @@ const Title = styled.h2`
   border: 5px solid black;
   border-radius: 16px;
   font-family: 'Baron';
-  font-weight: 600;
   letter-spacing: 2px;
   font-style: italic;
+  font-weight: 300;
 `;
 
 const SectionBox = ({ title, children, className }: { className?: string; title: string; children: ReactNode }) => {

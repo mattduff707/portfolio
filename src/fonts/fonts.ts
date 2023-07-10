@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import Baron from './Baron.ttf';
+import Baron from './ChelaOne.ttf';
 import Rowdies from './Rowdies.ttf';
 
 export default createGlobalStyle`

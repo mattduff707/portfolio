@@ -11,8 +11,7 @@ const imgHeight = 180;
 
 const StyledSectionBox = styled(SectionBox)`
   position: relative;
-  padding-bottom: ${imgHeight / 2 + 32}px;
-  margin-bottom: 140px;
+  /* padding-bottom: ${imgHeight / 2 + 32}px; */
 `;
 const ImageWrapper = styled.div`
   display: flex;
@@ -54,11 +53,11 @@ const About = () => {
           facilis minus! Dolorum, eaque.
         </Text>
       </div>
-      <ImageWrapper>
+      {/* <ImageWrapper>
         <Image src={dogpic} />
         <Image src={gip} />
         <Image src={nickcage} />
-      </ImageWrapper>
+      </ImageWrapper> */}
     </StyledSectionBox>
   );
 };

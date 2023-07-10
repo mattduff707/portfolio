@@ -93,7 +93,7 @@ const Carousel = ({ images }: { images: string[] }) => {
       <ImgWrap>
         <Track translate={distance}>
           {images.map((image) => (
-            <CarouselImg src={image} />
+            <CarouselImg key={image} src={image} alt="" />
           ))}
         </Track>
       </ImgWrap>

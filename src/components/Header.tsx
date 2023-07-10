@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,17 +11,17 @@ const Wrapper = styled.div`
 const Name = styled.h1`
   font-size: var(--font-size-heading-xl);
   font-family: var(--font-family-heading);
-  font-weight: 600;
   letter-spacing: 6px;
   font-style: italic;
   height: 80px;
+  font-weight: 600;
 `;
 const Title = styled.h2`
   font-size: var(--font-size-heading-md);
   font-family: var(--font-family-heading);
-  font-weight: 500;
   font-style: italic;
   letter-spacing: 2px;
+  font-weight: 300;
 `;
 
 const Header = () => {
