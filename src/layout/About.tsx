@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionBox from '../components/SectionBox';
 import { styled } from 'styled-components';
-import { Button, Text } from '../components/generic';
+import { Button, Heading, Text } from '../components/generic';
 import dogpic from '../images/dogpic.jpg';
 import gip from '../images/gip.jpg';
 import nickcage from '../images/nickcage.jpg';
@@ -34,13 +34,26 @@ const Image = styled.img`
 const About = () => {
   return (
     <StyledSectionBox title={'About Me'}>
-      <Text withIndent>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat unde numquam facere aliquid voluptate ut
-        laboriosam in enim, iusto omnis beatae odit neque magni labore sequi porro, quas ratione! Molestiae. Lorem ipsum
-        dolor sit amet consectetur, adipisicing elit. Eveniet atque dicta harum cupiditate saepe autem error nam
-        voluptas ad, odit reiciendis corrupti neque ex. Iste reiciendis facilis minus! Dolorum, eaque. Iste reiciendis
-        facilis minus! Dolorum, eaque.
-      </Text>
+      <div style={{ paddingBottom: '24px' }}>
+        <Heading>As a Person</Heading>
+        <Text withIndent>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat unde numquam facere aliquid voluptate ut
+          laboriosam in enim, iusto omnis beatae odit neque magni labore sequi porro, quas ratione! Molestiae. Lorem
+          ipsum dolor sit amet consectetur, adipisicing elit. Eveniet atque dicta harum cupiditate saepe autem error nam
+          voluptas ad, odit reiciendis corrupti neque ex. Iste reiciendis facilis minus! Dolorum, eaque. Iste reiciendis
+          facilis minus! Dolorum, eaque.
+        </Text>
+      </div>
+      <div>
+        <Heading>As an Engineer</Heading>
+        <Text withIndent>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat unde numquam facere aliquid voluptate ut
+          laboriosam in enim, iusto omnis beatae odit neque magni labore sequi porro, quas ratione! Molestiae. Lorem
+          ipsum dolor sit amet consectetur, adipisicing elit. Eveniet atque dicta harum cupiditate saepe autem error nam
+          voluptas ad, odit reiciendis corrupti neque ex. Iste reiciendis facilis minus! Dolorum, eaque. Iste reiciendis
+          facilis minus! Dolorum, eaque.
+        </Text>
+      </div>
       <ImageWrapper>
         <Image src={dogpic} />
         <Image src={gip} />

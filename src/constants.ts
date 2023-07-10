@@ -53,6 +53,8 @@ export interface ProjectData {
   stack: string[];
   role: string;
   images: string[];
+  github: string;
+  live: string;
 }
 
 export const projectData: ProjectData[] = [
@@ -74,6 +76,8 @@ export const projectData: ProjectData[] = [
       'Postmark',
     ],
     role: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    github: '',
+    live: '',
     images: [
       supercall1,
       supercall2,

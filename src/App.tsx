@@ -1,17 +1,21 @@
-import { styled, createGlobalStyle } from "styled-components";
-import Content from "./layout/Content";
-import GlobalFonts from "./fonts/fonts";
-import { tokens } from "./constants";
-import Contact from "./layout/Contact";
+import { styled, createGlobalStyle } from 'styled-components';
+import Content from './layout/Content';
+import GlobalFonts from './fonts/fonts';
+import { tokens } from './constants';
+import Contact from './layout/Contact';
+
+const Wrapper = styled.main`
+  overflow: auto;
+`;
 
 function App() {
   return (
-    <main>
+    <Wrapper>
       <GlobalStyle />
       <GlobalFonts />
       <Content />
       <Contact />
-    </main>
+    </Wrapper>
   );
 }
 
@@ -65,6 +69,26 @@ button {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 69px;
+
+
+  &::-webkit-scrollbar {
+    width: 16px;
+    outline: 5px solid black;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    /* background-color: red; */
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 40px;
+
+    &:hover {
+      background-color: ${tokens.color.primary};
+    }
+  }
 }
 main, body, html {
   width: 100%;

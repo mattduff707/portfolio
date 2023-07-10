@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Header from "../components/Header";
-import { tokens } from "../constants";
-import About from "./About";
-import Projects from "./Projects";
+import styled from 'styled-components';
+import Header from '../components/Header';
+import { tokens } from '../constants';
+import About from './About';
+import Projects from './Projects';
 
 const Wrapper = styled.div`
   width: 100%;
