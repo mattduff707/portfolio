@@ -13,6 +13,7 @@ const expand = keyframes`
 export const Heading = styled.h4<{ delay?: number }>`
   font-size: var(--font-size-heading-sm);
   font-family: var(--font-family-text);
+  font-weight: 500;
   margin-bottom: 8px;
   &:after {
     content: '';

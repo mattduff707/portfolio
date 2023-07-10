@@ -27,7 +27,7 @@ const Title = styled.h2`
   left: 16px;
   border: 5px solid black;
   border-radius: 16px;
-  font-family: 'Baron';
+  font-family: var(--font-family-heading);
   letter-spacing: 2px;
   font-style: italic;
   font-weight: 300;

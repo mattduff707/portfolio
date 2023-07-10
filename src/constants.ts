@@ -29,8 +29,8 @@ export const tokens = {
       },
     },
     family: {
-      text: 'Rowdies',
-      heading: 'Baron',
+      text: 'Rowdies, sans-serif',
+      heading: 'Baron, sans-serif',
     },
   },
   media: {
