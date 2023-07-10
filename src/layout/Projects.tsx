@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import SectionBox from '../components/SectionBox';
-import { styled } from 'styled-components';
+import { styled, css } from 'styled-components';
 import ProjectLink from '../components/ProjectLink';
 import { projectData } from '../constants';
 import ProjectPage from './ProjectPage';
+
+const StyledSectionBox = styled(SectionBox)<{ isProjectActive?: boolean }>`
+  ${({ isProjectActive }) =>
+    isProjectActive &&
+    css`
+      padding: 0px;
+    `}
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,11 +22,15 @@ const Wrapper = styled.div`
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState<number | null>(null);
+  const isProjectActive = activeProject !== null;
 
   const handleClose = () => setActiveProject(null);
   return (
-    <SectionBox title={'Projects'}>
-      {activeProject !== null ? (
+    <StyledSectionBox
+      isProjectActive={isProjectActive}
+      title={isProjectActive ? projectData[activeProject].title : 'Projects'}
+    >
+      {isProjectActive ? (
         <ProjectPage handleClose={handleClose} project={projectData[activeProject]} />
       ) : (
         <Wrapper>
@@ -32,7 +44,7 @@ const Projects = () => {
           ))}
         </Wrapper>
       )}
-    </SectionBox>
+    </StyledSectionBox>
   );
 };
 

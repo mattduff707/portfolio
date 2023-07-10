@@ -73,9 +73,13 @@ export const Anchor = styled.a`
   border: none;
   cursor: pointer;
   padding: 4px 12px;
+  padding-left: 4px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-decoration: none;
+  color: black;
+
   &:after {
     content: '';
     display: block;

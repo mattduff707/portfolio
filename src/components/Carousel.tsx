@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 24px;
+  padding-bottom: 48px;
 `;
 const Track = styled.div<{ translate: number }>`
   display: flex;
