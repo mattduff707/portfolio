@@ -10,12 +10,13 @@ import Resume from '../components/icons/Resume';
 
 const Wrapper = styled.footer`
   --shadow-color: 0deg 0% 63%;
-  position: fixed;
-  bottom: 0px;
+  /* position: fixed;
+  bottom: 0px; */
   width: 100%;
   border-top: 5px solid black;
   background: white;
   z-index: 1000;
+  height: auto;
 `;
 
 const Container = styled.ul`

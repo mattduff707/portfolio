@@ -5,7 +5,11 @@ import { tokens } from './constants';
 import Contact from './layout/Contact';
 
 const Wrapper = styled.main`
-  overflow: auto;
+  overflow: hidden;
+  display: grid;
+  height: 100%;
+  max-height: 100vh;
+  grid-template-rows: 1fr auto;
 `;
 
 function App() {
@@ -69,26 +73,9 @@ button {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  padding-bottom: 69px;
+  /* padding-bottom: 69px; */
+  /* overflow: hidden; */
 
-
-  &::-webkit-scrollbar {
-    width: 16px;
-    outline: 5px solid black;
-    border-top: none;
-    border-bottom: none;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    /* background-color: red; */
-    background-color: black;
-    border: 3px solid white;
-    border-radius: 40px;
-
-    &:hover {
-      background-color: ${tokens.color.primary};
-    }
-  }
 }
 main, body, html {
   width: 100%;
