@@ -26,8 +26,11 @@ const ImgWrap = styled.div`
   display: flex;
 `;
 const CarouselImg = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 600px;
+  height: 600px;
+
+  /* min-width: 600px;
+  min-height: 600px; */
 `;
 
 const Filler = styled.div<{ flex: string }>`

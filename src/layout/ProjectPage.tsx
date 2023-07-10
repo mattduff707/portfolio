@@ -37,6 +37,7 @@ const Title = styled.h4`
 `;
 
 const Row = styled.div`
+  padding-top: 24px;
   display: flex;
   gap: 48px;
 `;
