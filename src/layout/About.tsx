@@ -1,10 +1,6 @@
-import React from 'react';
-import SectionBox from '../components/SectionBox';
-import { styled } from 'styled-components';
-import { Button, Heading, Text } from '../components/generic';
-import dogpic from '../images/dogpic.jpg';
-import gip from '../images/gip.jpg';
-import nickcage from '../images/nickcage.jpg';
+import { styled } from "styled-components";
+import SectionBox from "../components/SectionBox";
+import { Heading, Text } from "../components/generic";
 
 const imgWidth = 180;
 const imgHeight = 180;
@@ -32,25 +28,28 @@ const Image = styled.img`
 
 const About = () => {
   return (
-    <StyledSectionBox title={'About Me'}>
-      <div style={{ paddingBottom: '24px' }}>
+    <StyledSectionBox title={"About Me"}>
+      <div style={{ paddingBottom: "24px" }}>
         <Heading>As a Person</Heading>
         <Text withIndent>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat unde numquam facere aliquid voluptate ut
-          laboriosam in enim, iusto omnis beatae odit neque magni labore sequi porro, quas ratione! Molestiae. Lorem
-          ipsum dolor sit amet consectetur, adipisicing elit. Eveniet atque dicta harum cupiditate saepe autem error nam
-          voluptas ad, odit reiciendis corrupti neque ex. Iste reiciendis facilis minus! Dolorum, eaque. Iste reiciendis
-          facilis minus! Dolorum, eaque.
+          A Midwesterner turned Pacific Northwest transplant. When I am not
+          click clacking on a keyboard to bring life to the web you can find me
+          tending to my garden, on a mindful nature walk, or kicking back and
+          watching the sun drift beyond the horizon. My fiancé and I enjoy a
+          relaxing day at home with our two puppies as much as we love a
+          spontaneous vacation to a new locale. Let's talk about music, movies,
+          and food!
         </Text>
       </div>
       <div>
         <Heading>As an Engineer</Heading>
         <Text withIndent>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat unde numquam facere aliquid voluptate ut
-          laboriosam in enim, iusto omnis beatae odit neque magni labore sequi porro, quas ratione! Molestiae. Lorem
-          ipsum dolor sit amet consectetur, adipisicing elit. Eveniet atque dicta harum cupiditate saepe autem error nam
-          voluptas ad, odit reiciendis corrupti neque ex. Iste reiciendis facilis minus! Dolorum, eaque. Iste reiciendis
-          facilis minus! Dolorum, eaque.
+          A proud self taught developer who fears no technical challenge. I am
+          equal parts indpendent productivity machine and patiently involved
+          collaborator. I revel in delivering results and overcoming roadblocks
+          along the way. I am always open to feedback as I have found no greater
+          source of knowledge than that of my colleagues. Let's create something
+          meaningful!
         </Text>
       </div>
       {/* <ImageWrapper>
