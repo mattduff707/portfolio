@@ -1,5 +1,5 @@
-import { keyframes, styled } from 'styled-components';
-import { tokens } from '../constants';
+import { keyframes, styled } from "styled-components";
+import { tokens } from "../constants";
 
 const expand = keyframes`
   from {
@@ -16,7 +16,7 @@ export const Heading = styled.h4<{ delay?: number }>`
   font-weight: 500;
   margin-bottom: 8px;
   &:after {
-    content: '';
+    content: "";
     display: block;
     height: 3px;
     background: black;
@@ -24,6 +24,9 @@ export const Heading = styled.h4<{ delay?: number }>`
     animation: ${expand} 0.5s ease-out forwards;
     width: 0%;
     /* ${({ delay }) => `animation-delay: ${delay}s;`} */
+  }
+  @media ${tokens.media.sm} {
+    font-size: var(--font-size-heading-xs);
   }
 `;
 export const Text = styled.p<{ withIndent?: boolean }>`
@@ -53,7 +56,7 @@ export const Button = styled.button`
   align-items: center;
   flex-direction: column;
   &:after {
-    content: '';
+    content: "";
     display: block;
     width: 110%;
     height: 5px;
@@ -82,7 +85,7 @@ export const Anchor = styled.a`
   color: black;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     width: 100%;
     height: 3px;

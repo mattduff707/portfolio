@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import Close from "./icons/Close";
+import { tokens } from "../constants";
 
 const Btn = styled.button`
   border: 4px solid black;
@@ -16,6 +17,10 @@ const StyledClose = styled(Close)`
   transition: fill 0.2s ease;
   ${Btn}:hover & {
     fill: var(--color-primary);
+  }
+  @media ${tokens.media.sm} {
+    height: 20px;
+    width: 20px;
   }
 `;
 

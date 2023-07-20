@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import Header from '../components/Header';
-import { tokens } from '../constants';
-import About from './About';
-import Projects from './Projects';
+import styled from "styled-components";
+import Header from "../components/Header";
+import { tokens } from "../constants";
+import About from "./About";
+import Projects from "./Projects";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -36,6 +36,9 @@ const ContentWrapper = styled.div`
 const Pad = styled.section`
   padding: 0px 24px;
   margin-bottom: 60px;
+  @media ${tokens.media.sm} {
+    padding: 0px 12px;
+  }
 `;
 const BottomPad = styled.div`
   height: 1px;

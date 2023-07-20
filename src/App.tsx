@@ -1,8 +1,8 @@
-import { styled, createGlobalStyle } from 'styled-components';
-import Content from './layout/Content';
-import GlobalFonts from './fonts/fonts';
-import { tokens } from './constants';
-import Contact from './layout/Contact';
+import { styled, createGlobalStyle } from "styled-components";
+import Content from "./layout/Content";
+import GlobalFonts from "./fonts/fonts";
+import { tokens } from "./constants";
+import Contact from "./layout/Contact";
 
 const Wrapper = styled.main`
   overflow: hidden;
@@ -34,6 +34,7 @@ html {
   --font-size-heading-lg: ${tokens.font.size.heading.lg};
   --font-size-heading-md: ${tokens.font.size.heading.md};
   --font-size-heading-sm: ${tokens.font.size.heading.sm};
+  --font-size-heading-xs: ${tokens.font.size.heading.xs};
 
   --font-family-heading: ${tokens.font.family.heading};
   --font-family-text: ${tokens.font.family.text};

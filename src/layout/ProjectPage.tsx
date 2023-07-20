@@ -1,12 +1,12 @@
-import React from 'react';
-import { ProjectData } from '../constants';
-import CloseBtn from '../components/CloseBtn';
-import { styled } from 'styled-components';
-import { Heading, Text, Anchor } from '../components/generic';
-import Arrow from '../components/icons/Arrow';
-import Carousel from '../components/Carousel';
-import Github from '../components/icons/Github';
-import Link from '../components/icons/Link';
+import React from "react";
+import { ProjectData, tokens } from "../constants";
+import CloseBtn from "../components/CloseBtn";
+import { styled } from "styled-components";
+import { Heading, Text, Anchor } from "../components/generic";
+import Arrow from "../components/icons/Arrow";
+import Carousel from "../components/Carousel";
+import Github from "../components/icons/Github";
+import Link from "../components/icons/Link";
 
 const Wrapper = styled.div`
   position: relative;
@@ -40,6 +40,9 @@ const Row = styled.div`
   padding-top: 24px;
   display: flex;
   gap: 48px;
+  @media ${tokens.media.sm} {
+    flex-direction: column;
+  }
 `;
 const List = styled.ul`
   list-style: none;
@@ -49,17 +52,21 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
+  font-size: var(--font-size-text-md);
   font-family: var(--font-family-text);
   display: flex;
   align-items: center;
   gap: 12px;
   &:before {
-    content: '';
+    content: "";
     display: block;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: black;
+  }
+  @media ${tokens.media.sm} {
+    font-size: var(--font-size-text-sm);
   }
 `;
 
@@ -110,7 +117,13 @@ const LinkIcon = styled(Link)`
   }
 `;
 
-const ProjectPage = ({ project, handleClose }: { project: ProjectData; handleClose: VoidFunction }) => {
+const ProjectPage = ({
+  project,
+  handleClose,
+}: {
+  project: ProjectData;
+  handleClose: VoidFunction;
+}) => {
   return (
     <Wrapper>
       <Container>

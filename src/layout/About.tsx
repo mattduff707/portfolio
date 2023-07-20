@@ -45,7 +45,7 @@ const About = () => {
         <Heading>As an Engineer</Heading>
         <Text withIndent>
           A proud self taught developer who fears no technical challenge. I am
-          equal parts indpendent productivity machine and patiently involved
+          equal parts independent productivity machine and patiently involved
           collaborator. I revel in delivering results and overcoming roadblocks
           along the way. I am always open to feedback as I have found no greater
           source of knowledge than that of my colleagues. Let's create something
