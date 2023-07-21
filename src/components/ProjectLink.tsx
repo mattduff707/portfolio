@@ -1,13 +1,13 @@
-import React from 'react';
-import { styled } from 'styled-components';
-import supercall from '../images/supercall.png';
-import Arrow from './icons/Arrow';
-import { tokens } from '../constants';
+import React from "react";
+import { styled } from "styled-components";
+import supercall from "../images/supercall.png";
+import Arrow from "./icons/Arrow";
+import { tokens } from "../constants";
 
 const Wrapper = styled.a`
   display: block;
   border-radius: 8px;
-  border: 5px solid black;
+  border: 5px solid var(--font-color);
   overflow: hidden;
   cursor: pointer;
 `;
@@ -16,9 +16,9 @@ const Title = styled.h4`
   font-family: var(--font-family-heading);
   letter-spacing: 2px;
   text-align: center;
-  background: white;
+  background: var(--bg-color);
   transition: background 0.2s ease, color 0.2s ease;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid var(--font-color);
   ${Wrapper}:hover & {
   }
 `;
@@ -39,10 +39,10 @@ const ImageCover = styled.div`
   bottom: 0px;
   padding: 0px 4px 0px 12px;
   position: absolute;
-  border-left: 5px solid black;
-  border-top: 5px solid black;
+  border-left: 5px solid var(--font-color);
+  border-top: 5px solid var(--font-color);
   border-radius: 12px 0px 0px 0px;
-  background: white;
+  background: var(--bg-color);
   opacity: 1;
   display: flex;
   gap: 4px;
@@ -57,7 +57,7 @@ const ImageCover = styled.div`
 const ArrowRight = styled(Arrow)`
   height: 20px;
   width: 20px;
-  fill: ${tokens.color.primary};
+  fill: var(--color-primary);
 `;
 
 const ProjectLink = ({

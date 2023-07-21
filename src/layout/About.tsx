@@ -23,7 +23,7 @@ const Image = styled.img`
   height: ${imgHeight}px;
   border-radius: 12px;
   object-fit: cover;
-  border: 5px solid black;
+  border: 5px solid var(--font-color);
 `;
 
 const About = () => {

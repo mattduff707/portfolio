@@ -8,16 +8,19 @@ import Email from "../components/icons/Email";
 import LinkedIn from "../components/icons/LinkedIn";
 import Resume from "../components/icons/Resume";
 import { tokens } from "../constants";
+import Switch from "../components/Switch";
 
 const Wrapper = styled.footer`
   --shadow-color: 0deg 0% 63%;
   /* position: fixed;
   bottom: 0px; */
   width: 100%;
-  border-top: 5px solid black;
-  background: white;
+  border-top: 5px solid var(--font-color);
+  background: var(--bg-color);
   z-index: 1000;
   height: auto;
+
+  display: flex;
 
   @media ${tokens.media.md} {
     display: none;
@@ -31,6 +34,13 @@ const Container = styled.ul`
   gap: 12px;
   list-style: none;
   padding: 0;
+  flex: 1;
+`;
+
+const ControlContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 
 const ContactItem = styled.li`
@@ -80,7 +90,13 @@ const ResumeIcon = styled(Resume)`
   }
 `;
 
-const Contact = () => {
+const Contact = ({
+  setIsDark,
+  isDark,
+}: {
+  setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
+  isDark: boolean;
+}) => {
   return (
     <Wrapper title={"Contact"}>
       <Container>
@@ -101,6 +117,13 @@ const Contact = () => {
           <Anchor>Resume</Anchor>
         </ContactItem>
       </Container>
+      <ControlContainer>
+        <Switch
+          onChange={() => setIsDark((prev) => !prev)}
+          id="mode"
+          toggled={isDark}
+        />
+      </ControlContainer>
     </Wrapper>
   );
 };

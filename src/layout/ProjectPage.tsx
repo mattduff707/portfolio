@@ -63,7 +63,7 @@ const ListItem = styled.li`
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: black;
+    background-color: var(--font-color);
   }
   @media ${tokens.media.sm} {
     font-size: var(--font-size-text-sm);
@@ -76,7 +76,7 @@ const AnchorRow = styled.div`
   align-items: center;
   gap: 24px;
   padding: 12px;
-  border: 5px solid black;
+  border: 5px solid var(--font-color);
   border-left: none;
   border-right: none;
 `;

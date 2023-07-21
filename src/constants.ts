@@ -41,7 +41,12 @@ export const tokens = {
     lg: "only screen and (max-width: 1200px)",
   },
   color: {
-    primary: "#ff367c",
+    primaryLight: "#ff367c",
+    primaryDark: "red",
+    bgLight: "#FFF",
+    textLight: "#000",
+    bgDark: "#000",
+    textDark: "#FFF",
   },
 };
 

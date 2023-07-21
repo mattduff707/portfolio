@@ -17,11 +17,11 @@ const Track = styled.div<{ translate: number }>`
   transform: translateX(${({ translate }) => translate}%);
 `;
 const ImgWrap = styled.div`
-  background: black;
+  background: var(--bg-color);
   width: 600px;
   height: 600px;
   overflow: hidden;
-  border: 5px solid black;
+  border: 5px solid var(--font-color);
   border-radius: 12px;
   display: flex;
   @media ${tokens.media.md} {
@@ -68,12 +68,12 @@ const ArrowWrap = styled.div<{ isRight?: boolean }>`
   z-index: 1;
   display: grid;
   place-items: center;
-  border: 5px solid black;
+  border: 5px solid var(--font-color);
   border-radius: 50%;
   width: 80px;
   height: 80px;
   transform: translateX(${({ isRight }) => (isRight ? "-" : "")}43px);
-  background-color: white;
+  background: var(--bg-color);
   cursor: pointer;
 
   @media ${tokens.media.md} {
@@ -97,6 +97,7 @@ const ArrowIcon = styled(Arrow)`
   width: 44px;
   height: 44px;
   transition: fill 0.2s ease;
+  fill: var(--font-color);
   ${ArrowWrap}:hover & {
     fill: var(--color-primary);
   }

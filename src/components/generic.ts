@@ -19,7 +19,7 @@ export const Heading = styled.h4<{ delay?: number }>`
     content: "";
     display: block;
     height: 3px;
-    background: black;
+    background: var(--font-color);
     border-radius: 24px;
     animation: ${expand} 0.5s ease-out forwards;
     width: 0%;
@@ -46,7 +46,7 @@ export const Text = styled.p<{ withIndent?: boolean }>`
 `;
 
 export const Button = styled.button`
-  background: white;
+  background: var(--bg-color);
   font-size: 1rem;
   font-family: var(--font-family-text);
   border: none;
@@ -60,7 +60,7 @@ export const Button = styled.button`
     display: block;
     width: 110%;
     height: 5px;
-    background: black;
+    background: var(--font-color);
     border-radius: 32px;
     transition: background 0.2s ease, width 0.2s ease;
   }
@@ -71,7 +71,7 @@ export const Button = styled.button`
   }
 `;
 export const Anchor = styled.a`
-  background: white;
+  background: var(--bg-color);
   font-size: var(--font-size-text-md);
   font-family: var(--font-family-text);
   border: none;
@@ -82,14 +82,14 @@ export const Anchor = styled.a`
   align-items: center;
   flex-direction: column;
   text-decoration: none;
-  color: black;
+  color: var(--font-color);
 
   &:after {
     content: "";
     display: block;
     width: 100%;
     height: 3px;
-    background: black;
+    background: var(--font-color);
     border-radius: 32px;
     transition: background 0.2s ease, width 0.2s ease;
   }

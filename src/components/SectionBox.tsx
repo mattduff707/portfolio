@@ -5,12 +5,12 @@ import { tokens } from "../constants";
 const Wrapper = styled.div`
   --shadow-color: 0deg 0% 63%;
   border-radius: 16px;
-  border: 5px solid black;
+  border: 5px solid var(--font-color);
   padding: 20px;
   padding-top: 40px;
   padding-bottom: 32px;
   position: relative;
-  background: white;
+  background: var(--bg-color);
   transition: height 0.3s ease;
   box-shadow: 0px 0.1px 0.1px hsl(var(--shadow-color) / 0.34),
     0px 0.6px 0.7px -0.4px hsl(var(--shadow-color) / 0.34),
@@ -28,9 +28,9 @@ const Title = styled.h2`
   padding: 4px 16px;
   position: absolute;
   top: -35px;
-  background: white;
+  background: var(--bg-color);
   left: 16px;
-  border: 5px solid black;
+  border: 5px solid var(--font-color);
   border-radius: 16px;
   font-family: var(--font-family-heading);
   letter-spacing: 2px;

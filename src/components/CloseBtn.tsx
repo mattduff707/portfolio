@@ -4,7 +4,7 @@ import Close from "./icons/Close";
 import { tokens } from "../constants";
 
 const Btn = styled.button`
-  border: 4px solid black;
+  border: 4px solid var(--font-color);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -15,6 +15,7 @@ const StyledClose = styled(Close)`
   height: 24px;
   width: 24px;
   transition: fill 0.2s ease;
+  fill: var(--font-color);
   ${Btn}:hover & {
     fill: var(--color-primary);
   }

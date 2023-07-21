@@ -12,19 +12,19 @@ const Wrapper = styled.div`
 
   &::-webkit-scrollbar {
     width: 16px;
-    outline: 5px solid black;
+    outline: 5px solid var(--font-color);
     border-top: none;
     border-bottom: none;
   }
 
   &::-webkit-scrollbar-thumb {
     /* background-color: red; */
-    background-color: black;
-    border: 3px solid white;
+    background-color: var(--font-color);
+    border: 3px solid var(--bg-color);
     border-radius: 40px;
 
     &:hover {
-      background-color: ${tokens.color.primary};
+      background-color: var(--color-primary);
     }
   }
 `;

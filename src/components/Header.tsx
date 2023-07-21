@@ -42,7 +42,7 @@ const Image = styled.img`
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 5px solid black;
+  border: 5px solid var(--font-color);
   margin-top: 12px;
   box-shadow: 0px 0.1px 0.1px hsl(var(--shadow-color) / 0.34),
     0px 0.6px 0.7px -0.4px hsl(var(--shadow-color) / 0.34),
