@@ -23,6 +23,8 @@ const SwitchLabel = styled.label`
 const SwitchButton = styled.span`
   content: "";
   position: absolute;
+  display: grid;
+  place-items: center;
   top: 2px;
   left: 2px;
   width: 28px;
@@ -45,11 +47,14 @@ const Switch = ({
   id,
   toggled,
   onChange,
+  icons,
 }: {
   id: string;
   toggled: boolean;
   onChange: any;
+  icons?: [JSX.Element, JSX.Element];
 }) => {
+  const [OffIcon, OnIcon] = icons;
   return (
     <>
       <SwitchInput
@@ -60,7 +65,13 @@ const Switch = ({
         onChange={onChange}
       />
       <SwitchLabel className="switch-label" htmlFor={id}>
-        <SwitchButton className="switch-button" />
+        {icons ? (
+          <SwitchButton className="switch-button">
+            {toggled ? OnIcon : OffIcon}
+          </SwitchButton>
+        ) : (
+          <SwitchButton className="switch-button" />
+        )}
       </SwitchLabel>
     </>
   );

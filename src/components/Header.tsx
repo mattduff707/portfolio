@@ -37,21 +37,21 @@ const Title = styled.h2`
     font-size: var(--font-size-heading-sm);
   }
 `;
-const Image = styled.img`
-  --shadow-color: 0deg 0% 63%;
+const Image = styled.img<{ isDark: boolean }>`
+  --shadow-color: ${({ isDark }) => (isDark ? "30deg 6% 4%" : "34deg 9% 58%")};
   width: 300px;
   height: 300px;
   border-radius: 50%;
   border: 5px solid var(--font-color);
   margin-top: 12px;
-  box-shadow: 0px 0.1px 0.1px hsl(var(--shadow-color) / 0.34),
-    0px 0.6px 0.7px -0.4px hsl(var(--shadow-color) / 0.34),
-    0px 1.2px 1.3px -0.7px hsl(var(--shadow-color) / 0.34),
-    0px 1.9px 2.1px -1.1px hsl(var(--shadow-color) / 0.34),
-    0px 3px 3.4px -1.4px hsl(var(--shadow-color) / 0.34),
-    0px 4.7px 5.3px -1.8px hsl(var(--shadow-color) / 0.34),
-    0.1px 7.2px 8.1px -2.1px hsl(var(--shadow-color) / 0.34),
-    0.1px 10.6px 11.9px -2.5px hsl(var(--shadow-color) / 0.34);
+  box-shadow: 0.1px 0.1px 0.2px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.5px 0.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    0.7px 0.9px 1.3px -0.7px hsl(var(--shadow-color) / 0.34),
+    1.1px 1.5px 2.1px -1.1px hsl(var(--shadow-color) / 0.34),
+    1.8px 2.4px 3.4px -1.4px hsl(var(--shadow-color) / 0.34),
+    2.8px 3.8px 5.3px -1.8px hsl(var(--shadow-color) / 0.34),
+    4.3px 5.7px 8px -2.1px hsl(var(--shadow-color) / 0.34),
+    6.3px 8.4px 11.8px -2.5px hsl(var(--shadow-color) / 0.34);
 
   @media ${tokens.media.sm} {
     width: 240px;
@@ -59,11 +59,11 @@ const Image = styled.img`
   }
 `;
 
-const Header = () => {
+const Header = ({ isDark }: { isDark: boolean }) => {
   return (
     <Wrapper>
       <Name>Matthew Duffy</Name>
-      <Image src={dogpic} />
+      <Image isDark={isDark} src={dogpic} />
       <Title>Full-Stack Engineer</Title>
     </Wrapper>
   );

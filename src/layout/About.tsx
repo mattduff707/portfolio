@@ -26,9 +26,9 @@ const Image = styled.img`
   border: 5px solid var(--font-color);
 `;
 
-const About = () => {
+const About = ({ isDark }: { isDark: boolean }) => {
   return (
-    <StyledSectionBox title={"About Me"}>
+    <StyledSectionBox isDark={isDark} title={"About Me"}>
       <div style={{ paddingBottom: "24px" }}>
         <Heading>As a Person</Heading>
         <Text withIndent>

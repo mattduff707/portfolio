@@ -9,6 +9,8 @@ import LinkedIn from "../components/icons/LinkedIn";
 import Resume from "../components/icons/Resume";
 import { tokens } from "../constants";
 import Switch from "../components/Switch";
+import Moon from "../components/icons/Moon";
+import Sun from "../components/icons/Sun";
 
 const Wrapper = styled.footer`
   --shadow-color: 0deg 0% 63%;
@@ -41,6 +43,8 @@ const ControlContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  border-left: 5px solid var(--font-color);
+  padding: 0 12px;
 `;
 
 const ContactItem = styled.li`
@@ -89,6 +93,17 @@ const ResumeIcon = styled(Resume)`
     fill: var(--color-primary);
   }
 `;
+const StyledSun = styled(Sun)`
+  width: 20px;
+  height: 20px;
+  fill: var(--bg-color);
+`;
+const StyledMoon = styled(Moon)`
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  fill: var(--bg-color);
+`;
 
 const Contact = ({
   setIsDark,
@@ -119,6 +134,7 @@ const Contact = ({
       </Container>
       <ControlContainer>
         <Switch
+          icons={[<StyledSun />, <StyledMoon />]}
           onChange={() => setIsDark((prev) => !prev)}
           id="mode"
           toggled={isDark}

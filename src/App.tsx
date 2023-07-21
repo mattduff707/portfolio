@@ -28,7 +28,7 @@ function App() {
     <Wrapper isDark={isDark}>
       <GlobalStyle />
       <GlobalFonts />
-      <Content />
+      <Content isDark={isDark} />
       <Contact setIsDark={setIsDark} isDark={isDark} />
     </Wrapper>
   );
@@ -52,6 +52,9 @@ html {
 
 
   
+}
+* {
+  transition: color 0.3s ease, background 0.3s ease, background-color 0.3s ease, border 0.3s ease;
 }
 
 button {

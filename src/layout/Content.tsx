@@ -45,16 +45,16 @@ const BottomPad = styled.div`
   width: 100%;
 `;
 
-const Content = () => {
+const Content = ({ isDark }: { isDark: boolean }) => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <Header />
+        <Header isDark={isDark} />
         <Pad>
-          <About />
+          <About isDark={isDark} />
         </Pad>
         <Pad>
-          <Projects />
+          <Projects isDark={isDark} />
         </Pad>
         <BottomPad />
       </ContentWrapper>

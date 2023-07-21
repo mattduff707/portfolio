@@ -2,8 +2,9 @@ import React, { ReactNode, useState } from "react";
 import { styled } from "styled-components";
 import { tokens } from "../constants";
 
-const Wrapper = styled.div`
-  --shadow-color: 0deg 0% 63%;
+const Wrapper = styled.div<{ isDark: boolean }>`
+  --shadow-color: ${({ isDark }) => (isDark ? "30deg 6% 4%" : "34deg 9% 58%")};
+
   border-radius: 16px;
   border: 5px solid var(--font-color);
   padding: 20px;
@@ -11,15 +12,14 @@ const Wrapper = styled.div`
   padding-bottom: 32px;
   position: relative;
   background: var(--bg-color);
-  transition: height 0.3s ease;
-  box-shadow: 0px 0.1px 0.1px hsl(var(--shadow-color) / 0.34),
-    0px 0.6px 0.7px -0.4px hsl(var(--shadow-color) / 0.34),
-    0px 1.2px 1.3px -0.7px hsl(var(--shadow-color) / 0.34),
-    0px 1.9px 2.1px -1.1px hsl(var(--shadow-color) / 0.34),
-    0px 3px 3.4px -1.4px hsl(var(--shadow-color) / 0.34),
-    0px 4.7px 5.3px -1.8px hsl(var(--shadow-color) / 0.34),
-    0.1px 7.2px 8.1px -2.1px hsl(var(--shadow-color) / 0.34),
-    0.1px 10.6px 11.9px -2.5px hsl(var(--shadow-color) / 0.34);
+  box-shadow: 0.1px 0.1px 0.2px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.5px 0.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    0.7px 0.9px 1.3px -0.7px hsl(var(--shadow-color) / 0.34),
+    1.1px 1.5px 2.1px -1.1px hsl(var(--shadow-color) / 0.34),
+    1.8px 2.4px 3.4px -1.4px hsl(var(--shadow-color) / 0.34),
+    2.8px 3.8px 5.3px -1.8px hsl(var(--shadow-color) / 0.34),
+    4.3px 5.7px 8px -2.1px hsl(var(--shadow-color) / 0.34),
+    6.3px 8.4px 11.8px -2.5px hsl(var(--shadow-color) / 0.34);
 `;
 
 const Title = styled.h2`
@@ -46,13 +46,15 @@ const SectionBox = ({
   title,
   children,
   className,
+  isDark,
 }: {
   className?: string;
   title: string;
   children: ReactNode;
+  isDark: boolean;
 }) => {
   return (
-    <Wrapper className={className}>
+    <Wrapper isDark={isDark} className={className}>
       <Title>{title}</Title>
       {children}
     </Wrapper>
