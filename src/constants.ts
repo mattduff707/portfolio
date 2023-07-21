@@ -59,9 +59,10 @@ export interface ProjectData {
   overview: string;
   stack: string[];
   role: string;
+  interest: string;
   images: string[];
-  github: string;
-  live: string;
+  github?: string;
+  live?: string;
 }
 
 export const projectData: ProjectData[] = [
@@ -72,7 +73,7 @@ export const projectData: ProjectData[] = [
     },
     title: "Supercall",
     overview:
-      "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Supercall is a video conferencing app targeted primarily at the influencer market. It allows influencers to host one-on-one video calls with their fans at a set length and price. The influencer will be provided a link to their page that they can share across platforms. Fans can follow the link to request a call with that influencer by selecting up to three potential meeting times.",
     stack: [
       "React (Remix)",
       "Chakra UI",
@@ -82,9 +83,10 @@ export const projectData: ProjectData[] = [
       "Amazon Chime SDK",
       "Postmark",
     ],
-    role: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    github: "",
-    live: "",
+    role: "I worked as part of a two person team on this project. I worked full-stack but was primarily focused on the front-end. I created the entirety of the UI, email templates, account management, and scheduling logic.",
+    interest:
+      "The primary challenge of this app was the global scheduling. We needed to ensure that the influencer and fans timezone were accounted for when scheduling a call. We also needed to ensure that the influencer was not double booked. I created a scheduling algorithm that would correctly render the available dates and times to the user based on their timezone.",
+    live: "www.supercall.club",
     images: [
       supercall1,
       supercall2,

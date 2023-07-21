@@ -107,6 +107,7 @@ const LinkIcon = styled(Link)`
   height: 28px;
 
   & .icon-fill {
+    fill: var(--font-color);
     transition: fill 0.2s ease;
   }
 
@@ -130,12 +131,12 @@ const ProjectPage = ({
         <StyledCloseBtn handleClick={handleClose} />
         <div>
           <Heading>Overview</Heading>
-          <Text>{project.overview}</Text>
+          <Text withIndent>{project.overview}</Text>
         </div>
         <Row>
           <div style={{ flex: 1 }}>
             <Heading delay={0.25}>Role</Heading>
-            <Text>{project.role}</Text>
+            <Text withIndent>{project.role}</Text>
           </div>
           <div style={{ flex: 1 }}>
             <Heading delay={0.5}>Stack</Heading>
@@ -146,18 +147,24 @@ const ProjectPage = ({
             </List>
           </div>
         </Row>
+        <div>
+          <Heading>Point of Interest</Heading>
+          <Text withIndent>{project.interest}</Text>
+        </div>
       </Container>
       <AnchorRow>
-        <AnchorWrap href={project.github}>
-          <GithubIcon />
-          <Anchor as="span">GitHub</Anchor>
-        </AnchorWrap>
-        <AnchorWrap>
-          <LinkIcon />
-          <Anchor as="span" href={project.live}>
-            Live
-          </Anchor>
-        </AnchorWrap>
+        {project.github && (
+          <AnchorWrap href={project.github} target="_blank">
+            <GithubIcon />
+            <Anchor as="span">GitHub</Anchor>
+          </AnchorWrap>
+        )}
+        {project.live && (
+          <AnchorWrap href={project.live} target="_blank">
+            <LinkIcon />
+            <Anchor as="span">Live</Anchor>
+          </AnchorWrap>
+        )}
       </AnchorRow>
       <Carousel images={project.images} />
     </Wrapper>
