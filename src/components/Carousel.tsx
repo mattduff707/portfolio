@@ -1,10 +1,10 @@
-import React from 'react';
-import { styled } from 'styled-components';
-import Arrow from './icons/Arrow';
+import React from "react";
+import { styled } from "styled-components";
+import Arrow from "./icons/Arrow";
+import { tokens } from "../constants";
 
 const Wrapper = styled.div`
   display: flex;
-  padding: 12px;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -24,11 +24,34 @@ const ImgWrap = styled.div`
   border: 5px solid black;
   border-radius: 12px;
   display: flex;
+  @media ${tokens.media.md} {
+    width: 400px;
+    height: 400px;
+  }
+  @media ${tokens.media.sm} {
+    width: 280px;
+    height: 280px;
+  }
+  @media ${tokens.media.xs} {
+    width: 240px;
+    height: 240px;
+  }
 `;
 const CarouselImg = styled.img`
   width: 600px;
   height: 600px;
-
+  @media ${tokens.media.md} {
+    width: 400px;
+    height: 400px;
+  }
+  @media ${tokens.media.sm} {
+    width: 280px;
+    height: 280px;
+  }
+  @media ${tokens.media.xs} {
+    width: 240px;
+    height: 240px;
+  }
   /* min-width: 600px;
   min-height: 600px; */
 `;
@@ -40,7 +63,7 @@ const Filler = styled.div<{ flex: string }>`
   justify-content: ${({ flex }) => flex};
 `;
 
-const ArrowWrap = styled.div<{ translate: number }>`
+const ArrowWrap = styled.div<{ isRight?: boolean }>`
   user-select: none;
   z-index: 1;
   display: grid;
@@ -49,9 +72,25 @@ const ArrowWrap = styled.div<{ translate: number }>`
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  transform: translateX(${({ translate }) => translate}px);
+  transform: translateX(${({ isRight }) => (isRight ? "-" : "")}43px);
   background-color: white;
   cursor: pointer;
+
+  @media ${tokens.media.md} {
+    transform: translateX(${({ isRight }) => (isRight ? "-" : "")}33px);
+    width: 60px;
+    height: 60px;
+  }
+  @media ${tokens.media.sm} {
+    transform: translateX(${({ isRight }) => (isRight ? "-" : "")}27px);
+    width: 48px;
+    height: 48px;
+  }
+  @media ${tokens.media.xs} {
+    transform: translateX(${({ isRight }) => (isRight ? "-" : "")}23px);
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 const ArrowIcon = styled(Arrow)`
@@ -60,6 +99,18 @@ const ArrowIcon = styled(Arrow)`
   transition: fill 0.2s ease;
   ${ArrowWrap}:hover & {
     fill: var(--color-primary);
+  }
+  @media ${tokens.media.md} {
+    width: 36px;
+    height: 36px;
+  }
+  @media ${tokens.media.sm} {
+    width: 28px;
+    height: 28px;
+  }
+  @media ${tokens.media.xs} {
+    width: 24px;
+    height: 24px;
   }
 `;
 
@@ -77,14 +128,13 @@ const Carousel = ({ images }: { images: string[] }) => {
   const showRight = activeImgIdx < images.length - 1;
   return (
     <Wrapper>
-      <Filler flex={'flex-end'}>
+      <Filler flex={"flex-end"}>
         {showLeft && (
           <ArrowWrap
             onClick={(e) => {
               e.preventDefault();
               setActiveImgIdx(activeImgIdx - 1);
             }}
-            translate={43}
           >
             <LeftArrow />
           </ArrowWrap>
@@ -97,14 +147,14 @@ const Carousel = ({ images }: { images: string[] }) => {
           ))}
         </Track>
       </ImgWrap>
-      <Filler flex={'flex-start'}>
+      <Filler flex={"flex-start"}>
         {showRight && (
           <ArrowWrap
             onClick={(e) => {
               e.preventDefault();
               setActiveImgIdx(activeImgIdx + 1);
             }}
-            translate={-43}
+            isRight
           >
             <RightArrow />
           </ArrowWrap>
