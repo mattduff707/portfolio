@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
-import Arrow from "./icons/Arrow";
 import { tokens } from "../constants";
+import Arrow from "./icons/Arrow";
 
 const Wrapper = styled.div`
   display: flex;
@@ -132,7 +132,7 @@ const Carousel = ({ images }: { images: string[] }) => {
       <Filler flex={"flex-end"}>
         {showLeft && (
           <ArrowWrap
-            onClick={(e) => {
+            onClick={(e: any) => {
               e.preventDefault();
               setActiveImgIdx(activeImgIdx - 1);
             }}
@@ -151,7 +151,7 @@ const Carousel = ({ images }: { images: string[] }) => {
       <Filler flex={"flex-start"}>
         {showRight && (
           <ArrowWrap
-            onClick={(e) => {
+            onClick={(e: any) => {
               e.preventDefault();
               setActiveImgIdx(activeImgIdx + 1);
             }}

@@ -1,8 +1,5 @@
-import React from "react";
 import { styled } from "styled-components";
-import supercall from "../images/supercall.png";
 import Arrow from "./icons/Arrow";
-import { tokens } from "../constants";
 
 const Wrapper = styled.a`
   display: block;

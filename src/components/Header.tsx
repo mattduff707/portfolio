@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-import dogpic from "../images/dogpic.jpg";
 import { tokens } from "../constants";
+import dogpic from "../images/dogpic.jpg";
 
 const Wrapper = styled.div`
   display: flex;

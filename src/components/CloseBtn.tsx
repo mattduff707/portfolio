@@ -1,7 +1,6 @@
-import React from "react";
 import { styled } from "styled-components";
-import Close from "./icons/Close";
 import { tokens } from "../constants";
+import Close from "./icons/Close";
 
 const Btn = styled.button`
   border: 4px solid var(--font-color);
