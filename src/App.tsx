@@ -17,9 +17,11 @@ const Wrapper = styled.main<{ isDark: boolean }>`
     isDark ? tokens.color.bgDark : tokens.color.bgLight};
   --color-primary: ${({ isDark }) =>
     isDark ? tokens.color.primaryDark : tokens.color.primaryLight};
+  --page-bg: ${({ isDark }) =>
+    isDark ? tokens.color.pageBgDark : tokens.color.pageBgLight};
 
   color: var(--font-color);
-  background: var(--bg-color);
+  background: var(--page-bg);
 `;
 
 function App() {

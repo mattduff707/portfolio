@@ -45,9 +45,11 @@ export const tokens = {
     primaryLight: "#f01d7c",
     primaryDark: "#f7930f",
     bgLight: "#f2eee9",
+    pageBgLight: "#e6dfd5",
     textLight: "#21201f",
-    bgDark: "#21201f",
+    bgDark: "#2a2927",
     textDark: "#f2ebe4",
+    pageBgDark: "#21201f",
   },
 };
 

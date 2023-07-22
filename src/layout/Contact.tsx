@@ -117,7 +117,7 @@ const Contact = ({
       <Container>
         <ContactItem>
           <EmailIcon />
-          <Anchor>powerprogramming@hotmail.com</Anchor>
+          <Anchor>Email</Anchor>
         </ContactItem>
         <ContactItem>
           <GithubIcon />
