@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionBox from "../components/SectionBox";
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import { Anchor, Text } from "../components/generic";
 
 import Github from "../components/icons/Github";
@@ -11,6 +11,7 @@ import { tokens } from "../constants";
 import Switch from "../components/Switch";
 import Moon from "../components/icons/Moon";
 import Sun from "../components/icons/Sun";
+import resumePdf from "../images/resume2023July.pdf";
 
 const Wrapper = styled.footer`
   --shadow-color: 0deg 0% 63%;
@@ -48,11 +49,9 @@ const ControlContainer = styled.div`
 `;
 
 const ContactItem = styled.li`
-  display: flex;
-  gap: 4px;
-  align-items: center;
   padding: 12px 0px;
   cursor: pointer;
+
   &:hover > ${Anchor}:after {
     transition: background 0.2s ease, width 0.2s ease;
     background: var(--color-primary);
@@ -104,6 +103,12 @@ const StyledMoon = styled(Moon)`
   transform: rotate(45deg);
   fill: var(--bg-color);
 `;
+const LinkWrap = styled.a`
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  text-decoration: none;
+`;
 
 const Contact = ({
   setIsDark,
@@ -112,24 +117,46 @@ const Contact = ({
   setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
   isDark: boolean;
 }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("mattduff707@hotmail.com");
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
   return (
     <Wrapper title={"Contact"}>
       <Container>
         <ContactItem>
-          <EmailIcon />
-          <Anchor>Email</Anchor>
+          <LinkWrap as="button" onClick={handleCopy}>
+            <EmailIcon />
+            <Anchor copied={copied} staticSize={65}>
+              {copied ? "Copied!" : "Email"}
+            </Anchor>
+          </LinkWrap>
         </ContactItem>
         <ContactItem>
-          <GithubIcon />
-          <Anchor>GitHub</Anchor>
+          <LinkWrap href="https://github.com/mattduff707" target="_blank">
+            <GithubIcon />
+            <Anchor>GitHub</Anchor>
+          </LinkWrap>
         </ContactItem>
         <ContactItem>
-          <LinkedInIcon />
-          <Anchor>LinkedIn</Anchor>
+          <LinkWrap
+            href="https://www.linkedin.com/in/mattduff707/"
+            target="_blank"
+          >
+            <LinkedInIcon />
+            <Anchor>LinkedIn</Anchor>
+          </LinkWrap>
         </ContactItem>
         <ContactItem>
-          <ResumeIcon />
-          <Anchor>Resume</Anchor>
+          <LinkWrap href={resumePdf} target="_blank">
+            <ResumeIcon />
+            <Anchor>Resume</Anchor>
+          </LinkWrap>
         </ContactItem>
       </Container>
       <ControlContainer>

@@ -1,4 +1,4 @@
-import { keyframes, styled } from "styled-components";
+import { css, keyframes, styled } from "styled-components";
 import { tokens } from "../constants";
 
 const expand = keyframes`
@@ -70,7 +70,7 @@ export const Button = styled.button`
     width: 60%;
   }
 `;
-export const Anchor = styled.a`
+export const Anchor = styled.a<{ staticSize?: number; copied?: boolean }>`
   background: var(--bg-color);
   font-size: var(--font-size-text-md);
   font-family: var(--font-family-text);
@@ -83,6 +83,13 @@ export const Anchor = styled.a`
   flex-direction: column;
   text-decoration: none;
   color: var(--font-color);
+
+  ${({ staticSize, copied }) =>
+    staticSize &&
+    css`
+      width: ${staticSize}px;
+      padding-left: ${copied ? "16px" : "4px"};
+    `}
 
   &:after {
     content: "";
