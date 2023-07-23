@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SectionBox from "../components/SectionBox";
 import { css, styled } from "styled-components";
-import { Anchor, Text } from "../components/generic";
+import { Anchor, Heading, Text } from "../components/generic";
 
 import Github from "../components/icons/Github";
 import Email from "../components/icons/Email";
@@ -12,11 +12,12 @@ import Switch from "../components/Switch";
 import Moon from "../components/icons/Moon";
 import Sun from "../components/icons/Sun";
 import resumePdf from "../images/resume2023July.pdf";
+import Chevron from "../components/icons/Chevron";
 
-const Wrapper = styled.footer`
+const Wrapper = styled.footer<{ open?: boolean }>`
   --shadow-color: 0deg 0% 63%;
-  /* position: fixed;
-  bottom: 0px; */
+  position: fixed;
+  bottom: 0px;
   width: 100%;
   border-top: 5px solid var(--font-color);
   background: var(--bg-color);
@@ -26,7 +27,11 @@ const Wrapper = styled.footer`
   display: flex;
 
   @media ${tokens.media.md} {
-    display: none;
+    /* display: none; */
+    flex-direction: column;
+    transform: translateY(${({ open }) => (open ? "0px" : "356px")});
+    cursor: pointer;
+    transition: transform 0.4s ease;
   }
 `;
 
@@ -38,6 +43,9 @@ const Container = styled.ul`
   list-style: none;
   padding: 0;
   flex: 1;
+  @media ${tokens.media.md} {
+    flex-direction: column;
+  }
 `;
 
 const ControlContainer = styled.div`
@@ -46,6 +54,14 @@ const ControlContainer = styled.div`
   align-items: center;
   border-left: 5px solid var(--font-color);
   padding: 0 12px;
+
+  @media ${tokens.media.md} {
+    border-left: none;
+    border-top: 5px solid var(--font-color);
+    padding: 12px 0px;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const ContactItem = styled.li`
@@ -109,6 +125,26 @@ const LinkWrap = styled.a`
   align-items: center;
   text-decoration: none;
 `;
+const HeadingWrap = styled.div`
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  display: none;
+  @media ${tokens.media.md} {
+    display: flex;
+  }
+`;
+
+const ContactHeading = styled.h4`
+  font-size: var(--font-size-heading-md);
+  font-family: var(--font-family-heading);
+  text-align: center;
+`;
+const StyledChevron = styled(Chevron)<{ open?: boolean }>`
+  transform: ${({ open }) => (open ? "rotate(90deg)" : "rotate(270deg)")};
+  transition: transform 0.2s ease, fill 0.2s ease;
+  fill: var(--font-color);
+`;
 
 const Contact = ({
   setIsDark,
@@ -118,16 +154,25 @@ const Contact = ({
   isDark: boolean;
 }) => {
   const [copied, setCopied] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const handleCopy = () => {
+  const stopProp = (e: any) => e.stopPropagation();
+
+  const handleCopy = (e: any) => {
+    e.stopPropagation();
     navigator.clipboard.writeText("mattduff707@hotmail.com");
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
     }, 2000);
   };
+
   return (
-    <Wrapper title={"Contact"}>
+    <Wrapper open={open} onClick={() => setOpen(!open)} title={"Contact"}>
+      <HeadingWrap>
+        <ContactHeading>Contact</ContactHeading>
+        <StyledChevron open={open} />
+      </HeadingWrap>
       <Container>
         <ContactItem>
           <LinkWrap as="button" onClick={handleCopy}>
@@ -137,13 +182,13 @@ const Contact = ({
             </Anchor>
           </LinkWrap>
         </ContactItem>
-        <ContactItem>
+        <ContactItem onClick={stopProp}>
           <LinkWrap href="https://github.com/mattduff707" target="_blank">
             <GithubIcon />
             <Anchor>GitHub</Anchor>
           </LinkWrap>
         </ContactItem>
-        <ContactItem>
+        <ContactItem onClick={stopProp}>
           <LinkWrap
             href="https://www.linkedin.com/in/mattduff707/"
             target="_blank"
@@ -152,7 +197,7 @@ const Contact = ({
             <Anchor>LinkedIn</Anchor>
           </LinkWrap>
         </ContactItem>
-        <ContactItem>
+        <ContactItem onClick={stopProp}>
           <LinkWrap href={resumePdf} target="_blank">
             <ResumeIcon />
             <Anchor>Resume</Anchor>
