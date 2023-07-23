@@ -14,8 +14,8 @@ import Sun from "../components/icons/Sun";
 import resumePdf from "../images/resume2023July.pdf";
 import Chevron from "../components/icons/Chevron";
 
-const Wrapper = styled.footer<{ open?: boolean }>`
-  --shadow-color: 0deg 0% 63%;
+const Wrapper = styled.footer<{ open?: boolean; isDark: boolean }>`
+  --shadow-color: ${({ isDark }) => (isDark ? "30deg 6% 4%" : "34deg 9% 58%")};
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -25,6 +25,15 @@ const Wrapper = styled.footer<{ open?: boolean }>`
   height: auto;
 
   display: flex;
+
+  box-shadow: 0px -0.1px 0.1px hsl(var(--shadow-color) / 0.34),
+    0px -0.3px 0.3px -0.4px hsl(var(--shadow-color) / 0.34),
+    -0.1px -0.6px 0.7px -0.7px hsl(var(--shadow-color) / 0.34),
+    -0.1px -0.9px 1px -1.1px hsl(var(--shadow-color) / 0.34),
+    -0.2px -1.5px 1.7px -1.4px hsl(var(--shadow-color) / 0.34),
+    -0.3px -2.3px 2.6px -1.8px hsl(var(--shadow-color) / 0.34),
+    -0.5px -3.5px 4px -2.1px hsl(var(--shadow-color) / 0.34),
+    -0.7px -5.1px 5.8px -2.5px hsl(var(--shadow-color) / 0.34);
 
   @media ${tokens.media.md} {
     /* display: none; */
@@ -168,7 +177,12 @@ const Contact = ({
   };
 
   return (
-    <Wrapper open={open} onClick={() => setOpen(!open)} title={"Contact"}>
+    <Wrapper
+      isDark={isDark}
+      open={open}
+      onClick={() => setOpen(!open)}
+      title={"Contact"}
+    >
       <HeadingWrap>
         <ContactHeading>Contact</ContactHeading>
         <StyledChevron open={open} />

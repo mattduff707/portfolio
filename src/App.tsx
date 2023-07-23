@@ -22,6 +22,7 @@ const Wrapper = styled.main<{ isDark: boolean }>`
 
   color: var(--font-color);
   background: var(--page-bg);
+  padding-bottom: 68px;
 `;
 
 function App() {
@@ -56,7 +57,7 @@ html {
   
 }
 * {
-  transition: color 0.3s ease, background 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+  transition: color 0.3s ease, background 0.3s ease, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 }
 
 button {
