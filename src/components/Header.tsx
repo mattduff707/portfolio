@@ -91,11 +91,13 @@ const Header = ({ isDark }: { isDark: boolean }) => {
         isVisible={!isDark}
         src={headerPic}
         alt="Matthew Duffy holding a white puppy named Koia"
+        aria-hidden={isDark ? "true" : "false"}
       />
       <DarkImage
         isVisible={isDark}
         src={headerDarkPic}
         alt="Matthew Duffy holding a white puppy named Koia"
+        aria-hidden={isDark ? "false" : "true"}
       />
     </Wrapper>
   );
