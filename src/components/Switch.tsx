@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const SwitchInput = styled.input`
   height: 0;
@@ -24,7 +24,7 @@ const SwitchLabel = styled.label`
 `;
 
 const SwitchButton = styled.span`
-  content: "";
+  content: '';
   position: absolute;
   display: grid;
   place-items: center;
@@ -64,18 +64,10 @@ const Switch = ({
   const [OffIcon, OnIcon] = icons;
   return (
     <>
-      <SwitchInput
-        className="switch-checkbox"
-        id={id}
-        type="checkbox"
-        checked={toggled}
-        onChange={onChange}
-      />
+      <SwitchInput className="switch-checkbox" id={id} type="checkbox" checked={toggled} onChange={onChange} />
       <SwitchLabel className="switch-label" htmlFor={id}>
         {icons ? (
-          <SwitchButton className="switch-button">
-            {toggled ? OnIcon : OffIcon}
-          </SwitchButton>
+          <SwitchButton className="switch-button">{toggled ? OnIcon : OffIcon}</SwitchButton>
         ) : (
           <SwitchButton className="switch-button" />
         )}
