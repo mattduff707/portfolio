@@ -106,3 +106,14 @@ export const Anchor = styled.a<{ staticSize?: number; copied?: boolean }>`
     width: 60%;
   }
 `;
+
+export const Input = styled.input`
+  width: 100%;
+  border: 4px solid var(--font-color);
+  border-radius: 12px;
+  font-size: var(--font-size-text-md);
+  font-family: var(--font-family-text);
+  padding: 14px 16px 4px;
+  background: var(--bg-color);
+  outline: none;
+`;

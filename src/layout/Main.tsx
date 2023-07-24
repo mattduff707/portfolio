@@ -22,7 +22,7 @@ const Wrapper = styled.main<{ isDark: boolean }>`
   color: var(--font-color);
   transition: color 0.3s ease, background 0.3s ease;
   background: var(--page-bg);
-  padding-bottom: 68px;
+  padding-bottom: 48px;
 `;
 
 const Main = () => {
