@@ -89,7 +89,7 @@ export const projectData: ProjectData[] = [
     role: "I worked as part of a two person team on this project. I worked full-stack but was primarily focused on the front-end. I created the entirety of the UI, email templates, account management, and scheduling logic.",
     interest:
       "The primary challenge of this app was the global scheduling. We needed to ensure that the influencer and fans timezone were accounted for when scheduling a call. We also needed to ensure that the influencer was not double booked. I created a scheduling algorithm that would correctly render the available dates and times to the user based on their timezone.",
-    live: "www.supercall.club",
+    live: "https://www.supercall.club",
     images: [
       supercall1,
       supercall2,

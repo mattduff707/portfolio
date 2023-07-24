@@ -77,7 +77,14 @@ const ContactItem = styled.li`
   padding: 12px 0px;
   cursor: pointer;
 
-  &:hover > ${Anchor}:after {
+  /* &:hover > ${Anchor}:after {
+    transition: background 0.2s ease, width 0.2s ease;
+    background: var(--color-primary);
+    width: 60%;
+  } */
+`;
+const StyledAnchor = styled(Anchor)`
+  ${ContactItem}:hover &:after {
     transition: background 0.2s ease, width 0.2s ease;
     background: var(--color-primary);
     width: 60%;
@@ -191,15 +198,15 @@ const Contact = ({
         <ContactItem>
           <LinkWrap as="button" onClick={handleCopy}>
             <EmailIcon />
-            <Anchor copied={copied} staticSize={65}>
+            <StyledAnchor copied={copied} staticSize={65}>
               {copied ? "Copied!" : "Email"}
-            </Anchor>
+            </StyledAnchor>
           </LinkWrap>
         </ContactItem>
         <ContactItem onClick={stopProp}>
           <LinkWrap href="https://github.com/mattduff707" target="_blank">
             <GithubIcon />
-            <Anchor>GitHub</Anchor>
+            <StyledAnchor>GitHub</StyledAnchor>
           </LinkWrap>
         </ContactItem>
         <ContactItem onClick={stopProp}>
@@ -208,13 +215,13 @@ const Contact = ({
             target="_blank"
           >
             <LinkedInIcon />
-            <Anchor>LinkedIn</Anchor>
+            <StyledAnchor>LinkedIn</StyledAnchor>
           </LinkWrap>
         </ContactItem>
         <ContactItem onClick={stopProp}>
           <LinkWrap href={resumePdf} target="_blank">
             <ResumeIcon />
-            <Anchor>Resume</Anchor>
+            <StyledAnchor>Resume</StyledAnchor>
           </LinkWrap>
         </ContactItem>
       </Container>

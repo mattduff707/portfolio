@@ -4,7 +4,6 @@ import { tokens } from "../constants";
 
 const Wrapper = styled.div<{ isDark: boolean }>`
   --shadow-color: ${({ isDark }) => (isDark ? "30deg 6% 4%" : "34deg 9% 58%")};
-
   border-radius: 16px;
   border: 5px solid var(--font-color);
   padding: 20px;

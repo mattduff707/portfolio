@@ -1,39 +1,15 @@
-import { styled, createGlobalStyle } from "styled-components";
-import Content from "./layout/Content";
-import GlobalFonts from "./fonts/fonts";
+import { createGlobalStyle } from "styled-components";
 import { tokens } from "./constants";
-import Contact from "./layout/Contact";
-import { useState } from "react";
-
-const Wrapper = styled.main<{ isDark: boolean }>`
-  overflow: hidden;
-  display: grid;
-  height: 100%;
-  max-height: 100vh;
-  grid-template-rows: 1fr auto;
-  --font-color: ${({ isDark }) =>
-    isDark ? tokens.color.textDark : tokens.color.textLight};
-  --bg-color: ${({ isDark }) =>
-    isDark ? tokens.color.bgDark : tokens.color.bgLight};
-  --color-primary: ${({ isDark }) =>
-    isDark ? tokens.color.primaryDark : tokens.color.primaryLight};
-  --page-bg: ${({ isDark }) =>
-    isDark ? tokens.color.pageBgDark : tokens.color.pageBgLight};
-
-  color: var(--font-color);
-  background: var(--page-bg);
-  padding-bottom: 68px;
-`;
+import GlobalFonts from "./fonts/fonts";
+import Main from "./layout/Main";
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
   return (
-    <Wrapper isDark={isDark}>
+    <div>
       <GlobalStyle />
       <GlobalFonts />
-      <Content isDark={isDark} />
-      <Contact setIsDark={setIsDark} isDark={isDark} />
-    </Wrapper>
+      <Main />
+    </div>
   );
 }
 
@@ -57,7 +33,7 @@ html {
   
 }
 * {
-  transition: color 0.3s ease, background 0.3s ease, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 }
 
 button {
