@@ -11,7 +11,6 @@ export default function Sun({
       width="32"
       height="32"
       viewBox="0 0 24 24"
-      fill="white"
       {...props}
       className={className}
     >

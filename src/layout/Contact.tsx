@@ -128,12 +128,14 @@ const StyledSun = styled(Sun)`
   width: 20px;
   height: 20px;
   fill: var(--bg-color);
+  transition: fill 0.2s ease;
 `;
 const StyledMoon = styled(Moon)`
   width: 20px;
   height: 20px;
   transform: rotate(45deg);
   fill: var(--bg-color);
+  transition: fill 0.2s ease;
 `;
 const LinkWrap = styled.a`
   display: flex;

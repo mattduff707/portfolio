@@ -17,6 +17,10 @@ const SwitchLabel = styled.label`
   border: 4px solid var(--font-color);
   position: relative;
   transition: background-color 0.2s;
+
+  &:hover svg {
+    fill: var(--color-primary);
+  }
 `;
 
 const SwitchButton = styled.span`
