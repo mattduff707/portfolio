@@ -116,4 +116,5 @@ export const Input = styled.input`
   padding: 14px 16px 4px;
   background: var(--bg-color);
   outline: none;
+  color: var(--font-color);
 `;
