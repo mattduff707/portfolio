@@ -7,6 +7,7 @@ const Wrapper = styled.a`
   border: 5px solid var(--font-color);
   overflow: hidden;
   cursor: pointer;
+  flex-shrink: 0;
 `;
 const Title = styled.h4`
   font-size: var(--font-size-heading-md);

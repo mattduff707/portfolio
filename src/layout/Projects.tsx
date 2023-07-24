@@ -15,6 +15,7 @@ const StyledSectionBox = styled(SectionBox)<{ isProjectActive?: boolean }>`
 
 const Wrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 32px;
   padding-top: 12px;
   justify-content: center;
