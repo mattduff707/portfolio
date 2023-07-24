@@ -31,7 +31,7 @@ const Image = styled.img`
 const StackWrap = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 `;
 const StackGrid = styled.ul`
   display: grid;
