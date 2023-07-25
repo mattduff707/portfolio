@@ -1,8 +1,9 @@
 import { css, styled } from "styled-components";
 import SectionBox from "../components/SectionBox";
 import { Heading, Text, Input } from "../components/generic";
-import { stack, tokens } from "../constants";
+import { favorites, stack, tokens } from "../constants";
 import { useState } from "react";
+import Star from "../components/icons/Star";
 
 const imgWidth = 180;
 const imgHeight = 180;
@@ -10,14 +11,6 @@ const imgHeight = 180;
 const StyledSectionBox = styled(SectionBox)`
   position: relative;
   /* padding-bottom: ${imgHeight / 2 + 32}px; */
-`;
-const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  position: absolute;
-  bottom: -${imgHeight / 2}px;
-  left: 0px;
-  width: 100%;
 `;
 
 const Image = styled.img`
@@ -49,6 +42,8 @@ const StackGrid = styled.ul`
   }
 `;
 const StackItem = styled.li<{ isMatch: boolean; isSearch: boolean }>`
+  display: flex;
+  align-items: center;
   font-size: var(--font-size-text-md);
   font-family: var(--font-family-text);
   font-weight: 600;
@@ -78,6 +73,24 @@ const LabelText = styled.span`
   ${Input}:focus + & {
     color: var(--color-primary);
   }
+`;
+
+const StyledText = styled(Text)`
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-text-xs);
+  border: 3px solid var(--font-color);
+  border-radius: 8px;
+  padding: 4px 8px;
+  width: fit-content;
+  padding-right: 3px;
+`;
+const StyledStar = styled(Star)`
+  fill: var(--color-primary);
+  transform: translateY(-1px);
+  width: 20px;
+  height: 20px;
+  transition: fill 0.4s ease;
 `;
 
 const About = ({ isDark }: { isDark: boolean }) => {
@@ -118,22 +131,23 @@ const About = ({ isDark }: { isDark: boolean }) => {
           <Input onChange={handleSearch} value={search} />
           <LabelText>Search</LabelText>
         </InputWrap>
+        <StyledText>
+          Favorites
+          <span style={{ color: "var(--color-primary)" }}>
+            <StyledStar />
+          </span>
+        </StyledText>
         <StackGrid>
           {stack.map((item) => {
             const isMatch = item.toLowerCase().includes(search.toLowerCase());
             return (
               <StackItem isSearch={search.length > 0} isMatch={isMatch}>
-                {item}
+                {item} {favorites.includes(item) && <StyledStar />}
               </StackItem>
             );
           })}
         </StackGrid>
       </StackWrap>
-      {/* <ImageWrapper>
-        <Image src={dogpic} />
-        <Image src={gip} />
-        <Image src={nickcage} />
-      </ImageWrapper> */}
     </StyledSectionBox>
   );
 };

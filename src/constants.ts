@@ -159,6 +159,15 @@ export const projectData: ProjectData[] = [
   },
 ];
 
+export const favorites = [
+  "React",
+  "TypeScript",
+  "styled-components",
+  "PostgreSQL",
+  "Express",
+  "Prisma",
+  "Remix",
+];
 export const stack = [
   "React",
   "JavaScript",
