@@ -118,3 +118,12 @@ export const Input = styled.input`
   outline: none;
   color: var(--font-color);
 `;
+
+export const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;

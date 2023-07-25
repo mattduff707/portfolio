@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { styled } from "styled-components";
 import { tokens } from "../constants";
+import { fadeIn } from "./generic";
 
 const Wrapper = styled.div<{ isDark: boolean }>`
   --shadow-color: ${({ isDark }) => (isDark ? "30deg 6% 4%" : "34deg 9% 58%")};
@@ -19,6 +20,10 @@ const Wrapper = styled.div<{ isDark: boolean }>`
     2.8px 3.8px 5.3px -1.8px hsl(var(--shadow-color) / 0.34),
     4.3px 5.7px 8px -2.1px hsl(var(--shadow-color) / 0.34),
     6.3px 8.4px 11.8px -2.5px hsl(var(--shadow-color) / 0.34);
+
+  opacity: 0;
+  animation: ${fadeIn} 0.8s ease-in forwards;
+  /* animation-delay: 0.3s; */
 `;
 
 const Title = styled.h2`

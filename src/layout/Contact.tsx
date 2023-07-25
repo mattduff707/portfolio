@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SectionBox from "../components/SectionBox";
 import { css, styled } from "styled-components";
-import { Anchor, Heading, Text } from "../components/generic";
+import { Anchor, Heading, Text, fadeIn } from "../components/generic";
 
 import Github from "../components/icons/Github";
 import Email from "../components/icons/Email";
@@ -34,6 +34,9 @@ const Wrapper = styled.footer<{ open?: boolean; isDark: boolean }>`
     -0.3px -2.3px 2.6px -1.8px hsl(var(--shadow-color) / 0.34),
     -0.5px -3.5px 4px -2.1px hsl(var(--shadow-color) / 0.34),
     -0.7px -5.1px 5.8px -2.5px hsl(var(--shadow-color) / 0.34);
+
+  opacity: 0;
+  animation: ${fadeIn} 0.8s ease-in forwards;
 
   @media ${tokens.media.md} {
     /* display: none; */

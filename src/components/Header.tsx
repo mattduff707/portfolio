@@ -1,7 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { tokens } from "../constants";
 import headerPic from "../images/header.png";
 import headerDarkPic from "../images/headerDark.png";
+import { fadeIn } from "./generic";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -46,7 +48,7 @@ const Wrapper = styled.div`
 //     font-size: var(--font-size-heading-sm);
 //   }
 // `;
-const Image = styled.img<{ isVisible: boolean }>`
+const Image = styled.img<{ isVisible: boolean; isRendered: boolean }>`
   --shadow-color: 34deg 9% 58%;
   width: 380px;
   height: 380px;
@@ -67,6 +69,13 @@ const Image = styled.img<{ isVisible: boolean }>`
   opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
   transition: opacity 0.4s ease;
 
+  ${({ isVisible, isRendered }) =>
+    isVisible &&
+    !isRendered &&
+    css`
+      animation: ${fadeIn} 0.8s ease-in forwards;
+    `}
+
   @media ${tokens.media.sm} {
     width: 360px;
     height: 360px;
@@ -82,6 +91,8 @@ const DarkImage = styled(Image)`
 `;
 
 const Header = ({ isDark }: { isDark: boolean }) => {
+  const [initialRender, setInitialRender] = useState(false);
+
   return (
     <Wrapper>
       {/* <Name>Matthew Duffy</Name>
@@ -92,12 +103,16 @@ const Header = ({ isDark }: { isDark: boolean }) => {
         src={headerPic}
         alt="Matthew Duffy holding a white puppy named Koia"
         aria-hidden={isDark ? "true" : "false"}
+        isRendered={initialRender}
+        onAnimationEnd={() => setInitialRender(true)}
       />
       <DarkImage
         isVisible={isDark}
         src={headerDarkPic}
         alt="Matthew Duffy holding a white puppy named Koia"
         aria-hidden={isDark ? "false" : "true"}
+        isRendered={initialRender}
+        onAnimationEnd={() => setInitialRender(true)}
       />
     </Wrapper>
   );
