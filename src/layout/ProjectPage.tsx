@@ -1,12 +1,12 @@
-import React from "react";
-import { ProjectData, tokens } from "../constants";
-import CloseBtn from "../components/CloseBtn";
-import { styled } from "styled-components";
-import { Heading, Text, Anchor } from "../components/generic";
-import Arrow from "../components/icons/Arrow";
-import Carousel from "../components/Carousel";
-import Github from "../components/icons/Github";
-import Link from "../components/icons/Link";
+import React from 'react';
+import { ProjectData, tokens } from '../constants';
+import CloseBtn from '../components/CloseBtn';
+import { styled } from 'styled-components';
+import { Heading, Text, Anchor } from '../components/generic';
+import Arrow from '../components/icons/Arrow';
+import Carousel from '../components/Carousel';
+import Github from '../components/icons/Github';
+import Link from '../components/icons/Link';
 
 const Wrapper = styled.div`
   position: relative;
@@ -60,7 +60,7 @@ const ListItem = styled.li`
   align-items: center;
   gap: 12px;
   &:before {
-    content: "";
+    content: '';
     display: block;
     width: 8px;
     height: 8px;
@@ -120,13 +120,7 @@ const LinkIcon = styled(Link)`
   }
 `;
 
-const ProjectPage = ({
-  project,
-  handleClose,
-}: {
-  project: ProjectData;
-  handleClose: VoidFunction;
-}) => {
+const ProjectPage = ({ project, handleClose }: { project: ProjectData; handleClose: VoidFunction }) => {
   return (
     <Wrapper>
       <Container>
@@ -154,20 +148,23 @@ const ProjectPage = ({
           <Text withIndent>{project.interest}</Text>
         </div>
       </Container>
-      <AnchorRow>
-        {project.github && (
-          <AnchorWrap href={project.github} target="_blank">
-            <GithubIcon />
-            <Anchor as="span">GitHub</Anchor>
-          </AnchorWrap>
-        )}
-        {project.live && (
-          <AnchorWrap href={project.live} target="_blank">
-            <LinkIcon />
-            <Anchor as="span">Live</Anchor>
-          </AnchorWrap>
-        )}
-      </AnchorRow>
+      {project.github ||
+        (project.live && (
+          <AnchorRow>
+            {project.github && (
+              <AnchorWrap href={project.github} target="_blank">
+                <GithubIcon />
+                <Anchor as="span">GitHub</Anchor>
+              </AnchorWrap>
+            )}
+            {project.live && (
+              <AnchorWrap href={project.live} target="_blank">
+                <LinkIcon />
+                <Anchor as="span">Live</Anchor>
+              </AnchorWrap>
+            )}
+          </AnchorRow>
+        ))}
       <Carousel images={project.images} />
     </Wrapper>
   );
