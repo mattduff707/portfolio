@@ -219,7 +219,6 @@ export const stack = [
   'Sequelize',
   'Prisma',
   'Stripe API',
-  'PostgreSQL',
   'MongoDB',
   'Remix',
   'Git',
