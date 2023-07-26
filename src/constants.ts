@@ -168,7 +168,7 @@ export const projectData: ProjectData[] = [
     },
     title: 'Whatever.ai',
     overview:
-      "Whatever.ai is a web app that allows users to harness the power of AI to replace anyone in a photo with themselves. Users will go through a face ID flow to train their own Stable Diffusion model. Users can then upload a photo and utilize MediaPipe's interactive segmentation to select the person they want to replace. Unfortunately, development on the project was halted before completion.",
+      "Whatever.ai is a web app that allows users to harness the power of AI to replace anyone in a photo with an AI generated version of themselves. Users will go through a face ID flow to train their own Stable Diffusion model. Users can then upload a photo and utilize MediaPipe's interactive segmentation to select the person they want to replace. Unfortunately, development on the project was halted before completion.",
     stack: [
       'React (Remix)',
       'Chakra UI',
