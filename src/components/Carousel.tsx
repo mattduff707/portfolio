@@ -1,7 +1,7 @@
-import React from "react";
-import { styled } from "styled-components";
-import { tokens } from "../constants";
-import Arrow from "./icons/Arrow";
+import React from 'react';
+import { styled } from 'styled-components';
+import { tokens } from '../constants';
+import Arrow from './icons/Arrow';
 
 const Wrapper = styled.div`
   display: flex;
@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   align-items: center;
   padding-top: 24px;
   padding-bottom: 48px;
+  position: relative;
 `;
 const Track = styled.div<{ translate: number }>`
   display: flex;
@@ -72,22 +73,22 @@ const ArrowWrap = styled.div<{ isRight?: boolean }>`
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  transform: translateX(${({ isRight }) => (isRight ? "-" : "")}43px);
+  transform: translateX(${({ isRight }) => (isRight ? '-' : '')}43px);
   background: var(--bg-color);
   cursor: pointer;
 
   @media ${tokens.media.md} {
-    transform: translateX(${({ isRight }) => (isRight ? "-" : "")}33px);
+    transform: translateX(${({ isRight }) => (isRight ? '-' : '')}33px);
     width: 60px;
     height: 60px;
   }
   @media ${tokens.media.sm} {
-    transform: translateX(${({ isRight }) => (isRight ? "-" : "")}27px);
+    transform: translateX(${({ isRight }) => (isRight ? '-' : '')}27px);
     width: 48px;
     height: 48px;
   }
   @media ${tokens.media.xs} {
-    transform: translateX(${({ isRight }) => (isRight ? "-" : "")}23px);
+    transform: translateX(${({ isRight }) => (isRight ? '-' : '')}23px);
     width: 40px;
     height: 40px;
   }
@@ -115,6 +116,23 @@ const ArrowIcon = styled(Arrow)`
   }
 `;
 
+const CountWrap = styled.div`
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  right: 50%;
+  transform: translateX(50%);
+  background: var(--bg-color);
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 5px solid var(--font-color);
+  font-size: var(--font-size-text-lg);
+  font-family: var(--font-family-text);
+  @media ${tokens.media.md} {
+    font-size: var(--font-size-text-md);
+  }
+`;
+
 const RightArrow = styled(ArrowIcon)``;
 
 const LeftArrow = styled(ArrowIcon)`
@@ -122,6 +140,8 @@ const LeftArrow = styled(ArrowIcon)`
 `;
 const Carousel = ({ images }: { images: string[] }) => {
   const [activeImgIdx, setActiveImgIdx] = React.useState(0);
+  const currentImg = activeImgIdx + 1;
+  const totalImgs = images.length;
 
   const distance = -(activeImgIdx * 100);
 
@@ -129,7 +149,10 @@ const Carousel = ({ images }: { images: string[] }) => {
   const showRight = activeImgIdx < images.length - 1;
   return (
     <Wrapper>
-      <Filler flex={"flex-end"}>
+      <CountWrap>
+        {currentImg} / {totalImgs}
+      </CountWrap>
+      <Filler flex={'flex-end'}>
         {showLeft && (
           <ArrowWrap
             onClick={(e: any) => {
@@ -148,7 +171,7 @@ const Carousel = ({ images }: { images: string[] }) => {
           ))}
         </Track>
       </ImgWrap>
-      <Filler flex={"flex-start"}>
+      <Filler flex={'flex-start'}>
         {showRight && (
           <ArrowWrap
             onClick={(e: any) => {
