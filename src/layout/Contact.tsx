@@ -11,7 +11,7 @@ import { tokens } from "../constants";
 import Switch from "../components/Switch";
 import Moon from "../components/icons/Moon";
 import Sun from "../components/icons/Sun";
-import resumePdf from "../images/resume2023July.pdf";
+import resumePdf from "../images/resume2023Aug.pdf";
 import Chevron from "../components/icons/Chevron";
 
 const Wrapper = styled.footer<{ open?: boolean; isDark: boolean }>`
