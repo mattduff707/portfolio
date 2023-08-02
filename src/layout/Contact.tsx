@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import SectionBox from "../components/SectionBox";
-import { css, styled } from "styled-components";
-import { Anchor, Heading, Text, fadeIn } from "../components/generic";
+import React, { useState } from 'react';
+import SectionBox from '../components/SectionBox';
+import { css, styled } from 'styled-components';
+import { Anchor, Heading, Text, fadeIn } from '../components/generic';
 
-import Github from "../components/icons/Github";
-import Email from "../components/icons/Email";
-import LinkedIn from "../components/icons/LinkedIn";
-import Resume from "../components/icons/Resume";
-import { tokens } from "../constants";
-import Switch from "../components/Switch";
-import Moon from "../components/icons/Moon";
-import Sun from "../components/icons/Sun";
-import resumePdf from "../images/resume2023Aug.pdf";
-import Chevron from "../components/icons/Chevron";
+import Github from '../components/icons/Github';
+import Email from '../components/icons/Email';
+import LinkedIn from '../components/icons/LinkedIn';
+import Resume from '../components/icons/Resume';
+import { tokens } from '../constants';
+import Switch from '../components/Switch';
+import Moon from '../components/icons/Moon';
+import Sun from '../components/icons/Sun';
+import resumePdf from '../images/myResume.pdf';
+import Chevron from '../components/icons/Chevron';
 
 const Wrapper = styled.footer<{ open?: boolean; isDark: boolean }>`
-  --shadow-color: ${({ isDark }) => (isDark ? "30deg 6% 4%" : "34deg 9% 58%")};
+  --shadow-color: ${({ isDark }) => (isDark ? '30deg 6% 4%' : '34deg 9% 58%')};
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -26,13 +26,10 @@ const Wrapper = styled.footer<{ open?: boolean; isDark: boolean }>`
 
   display: flex;
 
-  box-shadow: 0px -0.1px 0.1px hsl(var(--shadow-color) / 0.34),
-    0px -0.3px 0.3px -0.4px hsl(var(--shadow-color) / 0.34),
-    -0.1px -0.6px 0.7px -0.7px hsl(var(--shadow-color) / 0.34),
-    -0.1px -0.9px 1px -1.1px hsl(var(--shadow-color) / 0.34),
+  box-shadow: 0px -0.1px 0.1px hsl(var(--shadow-color) / 0.34), 0px -0.3px 0.3px -0.4px hsl(var(--shadow-color) / 0.34),
+    -0.1px -0.6px 0.7px -0.7px hsl(var(--shadow-color) / 0.34), -0.1px -0.9px 1px -1.1px hsl(var(--shadow-color) / 0.34),
     -0.2px -1.5px 1.7px -1.4px hsl(var(--shadow-color) / 0.34),
-    -0.3px -2.3px 2.6px -1.8px hsl(var(--shadow-color) / 0.34),
-    -0.5px -3.5px 4px -2.1px hsl(var(--shadow-color) / 0.34),
+    -0.3px -2.3px 2.6px -1.8px hsl(var(--shadow-color) / 0.34), -0.5px -3.5px 4px -2.1px hsl(var(--shadow-color) / 0.34),
     -0.7px -5.1px 5.8px -2.5px hsl(var(--shadow-color) / 0.34);
 
   opacity: 0;
@@ -41,7 +38,7 @@ const Wrapper = styled.footer<{ open?: boolean; isDark: boolean }>`
   @media ${tokens.media.md} {
     /* display: none; */
     flex-direction: column;
-    transform: translateY(${({ open }) => (open ? "0px" : "356px")});
+    transform: translateY(${({ open }) => (open ? '0px' : '356px')});
     cursor: pointer;
     transition: transform 0.4s ease;
   }
@@ -162,7 +159,7 @@ const ContactHeading = styled.h4`
   text-align: center;
 `;
 const StyledChevron = styled(Chevron)<{ open?: boolean }>`
-  transform: ${({ open }) => (open ? "rotate(90deg)" : "rotate(270deg)")};
+  transform: ${({ open }) => (open ? 'rotate(90deg)' : 'rotate(270deg)')};
   transition: transform 0.2s ease, fill 0.2s ease;
   fill: var(--font-color);
 `;
@@ -181,7 +178,7 @@ const Contact = ({
 
   const handleCopy = (e: any) => {
     e.stopPropagation();
-    navigator.clipboard.writeText("mattduff707@hotmail.com");
+    navigator.clipboard.writeText('mattduff707@hotmail.com');
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
@@ -189,12 +186,7 @@ const Contact = ({
   };
 
   return (
-    <Wrapper
-      isDark={isDark}
-      open={open}
-      onClick={() => setOpen(!open)}
-      title={"Contact"}
-    >
+    <Wrapper isDark={isDark} open={open} onClick={() => setOpen(!open)} title={'Contact'}>
       <HeadingWrap>
         <ContactHeading>Contact</ContactHeading>
         <StyledChevron open={open} />
@@ -204,7 +196,7 @@ const Contact = ({
           <LinkWrap as="button" onClick={handleCopy}>
             <EmailIcon />
             <StyledAnchor copied={copied} staticSize={65}>
-              {copied ? "Copied!" : "Email"}
+              {copied ? 'Copied!' : 'Email'}
             </StyledAnchor>
           </LinkWrap>
         </ContactItem>
@@ -215,10 +207,7 @@ const Contact = ({
           </LinkWrap>
         </ContactItem>
         <ContactItem onClick={stopProp}>
-          <LinkWrap
-            href="https://www.linkedin.com/in/mattduff707/"
-            target="_blank"
-          >
+          <LinkWrap href="https://www.linkedin.com/in/mattduff707/" target="_blank">
             <LinkedInIcon />
             <StyledAnchor>LinkedIn</StyledAnchor>
           </LinkWrap>
