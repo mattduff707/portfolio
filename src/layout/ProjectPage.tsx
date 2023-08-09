@@ -144,7 +144,7 @@ const ProjectPage = ({ project, handleClose }: { project: ProjectData; handleClo
           </div>
         </Row>
         <div>
-          <Heading>Point of Interest</Heading>
+          <Heading>Highlight</Heading>
           <Text withIndent>{project.interest}</Text>
         </div>
       </Container>
