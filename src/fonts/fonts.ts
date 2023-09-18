@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-import Baron from './ChelaOne.ttf';
-import Rowdies from './Rowdies.ttf';
+import { createGlobalStyle } from "styled-components";
+import Baron from "./ChelaOne.ttf";
+import Rowdies from "./Mitr-Medium.ttf";
 
 export default createGlobalStyle`
     @font-face {
